@@ -1,0 +1,16 @@
+<!-- Loop over each object in the blogs array -->
+
+<div class="row justify-content-center">
+  {{#each blogs as |blog| }}
+  <div class="card mt-4 mx-2 col-md-5">
+    <a class="card-header text-center bg-dark" href="/crystal/{{blog.id}}">
+      <h2>{{blog.title}}</h2>
+    </a>
+    <div class="card-body bg-light">
+      <p class="card-text">{{blog.body}}</p>
+      <p class="card-text"><small class="text-muted">Posted by: {{blog.user.name}} on {{formatDate
+          blog.date_created}}</small></p>
+    </div>
+  </div>
+  {{/each}}
+</div>
