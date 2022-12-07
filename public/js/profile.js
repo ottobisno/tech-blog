@@ -1,4 +1,12 @@
-const newFormHandler = async (event) => {
+const newBlogForm = document.querySelector('#new-blog-card');
+const newBlogBtn = document.querySelector('#new-blog-btn');
+
+const showNewBlogFormHandler = async => {
+    newBlogForm.setAttribute('style', 'display: flex');
+    newBlogBtn.setAttribute('style', 'display: none')
+};
+
+const newBlogHandler = async (event) => {
     event.preventDefault();
 
     const title = document.querySelector('#blog-title').value.trim();
@@ -19,4 +27,5 @@ const newFormHandler = async (event) => {
     }
 };
 
-document.querySelector('.new-blog-form').addEventListener('submit', newFormHandler);
+newBlogBtn.addEventListener('click', showNewBlogFormHandler);
+document.querySelector('#new-blog-form').addEventListener('submit', newBlogHandler);
