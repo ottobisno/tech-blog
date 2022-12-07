@@ -36,7 +36,7 @@ router.get('/blog/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name']
+                    attributes: ['id', 'name']
                 },
                 {
                     model: Comment
@@ -66,7 +66,7 @@ router.get('/profile', withAuth, async (req, res) => {
         });
 
         const user = userData.get({ plain: true });
-        
+
         res.render('profile', {
             ...user,
             logged_in: true

@@ -1,3 +1,11 @@
+#blog-title-btn {
+    border-style: none;
+}
+
+#blog-title-btn:focus {
+    outline: none;
+}
+
 .card {
     padding-right: 0;
     padding-left: 0;
