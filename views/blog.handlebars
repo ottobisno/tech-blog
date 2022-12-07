@@ -1,0 +1,20 @@
+<div class="card text-center mt-5 shadow box">
+  <h2 class="text-dark mt-3 font-weight-bold">{{title}}</h2>
+  <p class="px-3">{{body}}</p>
+  <p><small class="text-muted">Posted by: {{user.name}} on {{formatDate date_created}}</small></p>
+</div>
+
+<div class="my-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Leave a comment:</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <button type="submit" class="btn btn-dark new-comment mt-3">Submit</button>
+</div>
+
+{{#if comments}}
+{{#each comments as |comment|}}
+<div class="card text-center mt-5 shadow box">
+  <p class="px-3">{{comment_body}}</p>
+  <p><small class="text-muted">Posted by: {{created_by}} on {{formatDate date_created}}</small></p>
+</div>
+{{/each}}
+{{/if}}

@@ -18,11 +18,12 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // Create a new comment
-router.post('/', withAuth, async (req, res) => {
+router.post('/blog/:id', withAuth, async (req, res) => {
     try {
         const newComment = await Comment.create({
             ...req.body,
             user_id: req.session.user_id,
+            created_by: req.session.name,
             // May need to update this
             blog_id: req.params.id
         });
